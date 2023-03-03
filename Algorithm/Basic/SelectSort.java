@@ -34,5 +34,4 @@ public class SelectSort {
         selectSort(num);
         printArray(num);
     }
-
 }
