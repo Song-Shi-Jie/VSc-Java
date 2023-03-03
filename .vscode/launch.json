@@ -1,0 +1,50 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SelectSort",
+            "request": "launch",
+            "mainClass": "Algorithm.Basic.SelectSort",
+            "projectName": "VSc-Java_8dad4612"
+        },
+        {
+            "type": "java",
+            "name": "BubbleSort",
+            "request": "launch",
+            "mainClass": "Algorithm.Basic.BubbleSort",
+            "projectName": "VSc-Java_8dad4612"
+        },
+        {
+            "type": "java",
+            "name": "InsertSort",
+            "request": "launch",
+            "mainClass": "Algorithm.Basic.InsertSort",
+            "projectName": "VSc-Java_8dad4612"
+        },
+        {
+            "type": "java",
+            "name": "hello",
+            "request": "launch",
+            "mainClass": "OnJavaPractice.hello",
+            "projectName": "VSc-Java_8dad4612"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "console": "externalTerminal"
+        },
+        {
+            "type": "java",
+            "name": "hello",
+            "request": "launch",
+            "mainClass": "hello",
+            "projectName": "VSc-Java_8dad4612"
+        }
+    ]
+}
