@@ -157,7 +157,19 @@ public class Day04 {
     }
 
     static void Pra09(){
-
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+        char op = s.next().charAt(0);
+        int b = s.nextInt();
+        int sum = 0;
+        switch(op){
+            case '+':sum = a+b;break;
+            case '-':sum = a-b;break;
+            case '*':sum = a*b;break;
+            case '/':sum = a/b;break;
+        }
+        System.out.println(a+" "+op+" "+b+" = "+sum);
+        s.close();
     }
 
     static void Pra10(){
@@ -219,7 +231,7 @@ public class Day04 {
 
 
     public static void main(String[] args){
-        Pra11();
+        Pra09();
     }
     
 }
