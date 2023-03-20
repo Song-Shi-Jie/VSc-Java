@@ -1,4 +1,5 @@
 {
+    "workbench.startupEditor": "welcomePage",
     "editor.formatOnSave": true,
     "[html]": {
         "editor.suggest.insertMode": "replace",
