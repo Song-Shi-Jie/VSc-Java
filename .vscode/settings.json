@@ -1,2 +1,15 @@
 {
+    "editor.formatOnSave": true,
+    "[html]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "gitlens.codeLens.scopes": [
+            "document"
+        ]
+    },
+    "[java]": {
+        "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
+    "editor.fontSize": 18,
+    "editor.fontFamily": "JetBrains Mono,Consolas, 'Courier New', monospace"
 }
