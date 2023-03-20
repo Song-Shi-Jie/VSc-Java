@@ -163,7 +163,7 @@ public class Day04 {
         s.close();
     }
 
-    static void Pra09() {
+    static void Prac09() {
         Scanner s = new Scanner(System.in);
         int a = s.nextInt();
         char op = s.next().charAt(0);
@@ -194,16 +194,16 @@ public class Day04 {
         int count = 0;
         while (true) {
             int sign = r.nextInt(3) + 1;
-            String tmp;
+            String temp;
             if (sign == 1)
-                tmp = "石头";
+                temp = "石头";
             else if (sign == 2)
-                tmp = "剪刀";
+                temp = "剪刀";
             else
-                tmp = "布";
+                temp = "布";
             System.out.println("你要出什么（1：石头；2：剪刀；3：布）：");
             int mysign = s.nextInt();
-            System.out.println("电脑出" + tmp);
+            System.out.println("电脑出" + temp);
             if (mysign == 1 || mysign == 2 || mysign == 3) {
                 if (mysign == (sign + 1) % 3) {
                     // 你的数字在我的数后面
@@ -231,7 +231,7 @@ public class Day04 {
 
     static void Pra11() {
         for (int i = 1; i <= 4; i++) {
-            for (int j = 1; j <= i; j++) {
+            for (int x = 1; x <= i; x++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -246,8 +246,8 @@ public class Day04 {
     }
 
     public static void main(String[] args) {
+        Prac09();
 
-        Pra09();
     }
 
 }
