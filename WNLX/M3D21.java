@@ -54,7 +54,7 @@ public class M3D21 {
                 return j;
             }
         }
-        return 0;
+        return -1;
     }
 
     static String searchAdd(String[] person, String add) {
@@ -120,7 +120,7 @@ public class M3D21 {
                 Scanner t = new Scanner(System.in);
                 int i = t.nextInt();
                 int ind = searchIndex(person, i);
-                if (ind != 0) {
+                if (ind != -1) {
                     System.out.println(person[ind]);
                     linfo = String.valueOf(ind);
                     break;
@@ -227,7 +227,7 @@ public class M3D21 {
                     Scanner d = new Scanner(System.in);
                     int id = d.nextInt();
                     int ind = searchIndex(person, id);
-                    if (ind != 0) {
+                    if (ind != -1) {
                         person[ind] = person[person.length - 1];
                         person = Arrays.copyOf(person, person.length - 1);
                         System.out.println("员工删除完成！");
