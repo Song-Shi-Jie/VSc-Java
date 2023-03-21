@@ -54,7 +54,7 @@ public class M3D21 {
                 return j;
             }
         }
-        return i;
+        return 0;
     }
 
     static String searchAdd(String[] person, String add) {
@@ -114,51 +114,83 @@ public class M3D21 {
     static String search(String[] person, int choose) {
         String linfo = "";
         if (choose == 1) {
-            System.out.print("请输入要查询的员工的编号：");
-            Scanner t = new Scanner(System.in);
-            int i = t.nextInt();
-            int ind = searchIndex(person, i);
-            System.out.println(person[ind]);
-            linfo = String.valueOf(ind);
+
+            while (true) {
+                System.out.print("请输入要查询的员工的编号：");
+                Scanner t = new Scanner(System.in);
+                int i = t.nextInt();
+                int ind = searchIndex(person, i);
+                if (ind != 0) {
+                    System.out.println(person[ind]);
+                    linfo = String.valueOf(ind);
+                    break;
+                } else {
+                    System.out.println("查无此编号，请重新输入！！！");
+                }
+                // clear();
+            }
 
         } else if (choose == 2) {
-            System.out.print("请输入要查询的姓氏或名字：");
-            Scanner f = new Scanner(System.in);
-            String fname = f.nextLine();
-            String info = searchName(person, fname);
-            // System.out.println(info);
-            for (int i = 0; i < info.length(); i++) {
-                char ind = info.charAt(i);
-                int p = Character.getNumericValue(ind);
-                System.out.println(person[p]);
+            while (true) {
+                System.out.print("请输入要查询的姓氏或名字：");
+                Scanner f = new Scanner(System.in);
+                String fname = f.nextLine();
+                String info = searchName(person, fname);
+                // System.out.println(info);
+                if (info != "") {
+                    for (int i = 0; i < info.length(); i++) {
+                        char ind = info.charAt(i);
+                        int p = Character.getNumericValue(ind);
+                        System.out.println(person[p]);
+                    }
+                    linfo = info;
+                    break;
+                } else {
+                    System.out.println("查无此人，请输入有效姓氏或名字！！！");
+                }
+
             }
-            linfo = info;
 
         } else if (choose == 3) {
-            System.out.print("请输入要查询的性别：");
-            Scanner f = new Scanner(System.in);
-            String sex = f.nextLine();
-            String info = searchSex(person, sex);
-            for (int i = 0; i < info.length(); i++) {
-                char ind = info.charAt(i);
-                int p = Character.getNumericValue(ind);
-                System.out.println(person[p]);
+            while (true) {
+                System.out.print("请输入要查询的性别：");
+                Scanner f = new Scanner(System.in);
+                String sex = f.nextLine();
+                String info = searchSex(person, sex);
+                if (info != "") {
+                    for (int i = 0; i < info.length(); i++) {
+                        char ind = info.charAt(i);
+                        int p = Character.getNumericValue(ind);
+                        System.out.println(person[p]);
+                    }
+                    linfo = info;
+                    break;
+                } else {
+                    System.out.println("请输入人类认知的性别。。。");
+                }
             }
-            linfo = info;
 
         } else if (choose == 4) {
-            System.out.print("请输入你要查询的地址：");
-            Scanner a = new Scanner(System.in);
-            String add = a.nextLine();
-            String info = searchAdd(person, add);
-            // System.out.println(info);
-            for (int i = 0; i < info.length(); i++) {
-                char ind = info.charAt(i);
-                int p = Character.getNumericValue(ind);
-                System.out.println(person[p]);
+            while (true) {
+                System.out.print("请输入你要查询的地址：");
+                Scanner a = new Scanner(System.in);
+                String add = a.nextLine();
+                String info = searchAdd(person, add);
+                // System.out.println(info);
+                if (info != "") {
+                    for (int i = 0; i < info.length(); i++) {
+                        char ind = info.charAt(i);
+                        int p = Character.getNumericValue(ind);
+                        System.out.println(person[p]);
+                    }
+                    System.out.println("" + add + "的员工有" + info.length() + "人！");
+                    linfo = info;
+                    break;
+                } else {
+                    System.out.println("请输入中国内地址！！！");
+                }
+
             }
-            System.out.println("" + add + "的员工有" + info.length() + "人！");
-            linfo = info;
 
         }
         return linfo;
@@ -190,14 +222,20 @@ public class M3D21 {
                 System.out.println("员工添加成功！");
                 clear();
             } else if (opt == 3) {
-                System.out.print("请输入要删除的员工编号：");
-                Scanner d = new Scanner(System.in);
-                int id = d.nextInt();
-                int ind = searchIndex(person, id);
-                person[ind] = person[person.length - 1];
-
-                person = Arrays.copyOf(person, person.length - 1);
-                System.out.println("员工删除完成！");
+                while (true) {
+                    System.out.print("请输入要删除的员工编号：");
+                    Scanner d = new Scanner(System.in);
+                    int id = d.nextInt();
+                    int ind = searchIndex(person, id);
+                    if (ind != 0) {
+                        person[ind] = person[person.length - 1];
+                        person = Arrays.copyOf(person, person.length - 1);
+                        System.out.println("员工删除完成！");
+                        break;
+                    } else {
+                        System.out.println("查无此编号，请更换编号！！！");
+                    }
+                }
                 clear();
             } else if (opt == 4) {
                 search(person, 3);
@@ -218,18 +256,27 @@ public class M3D21 {
                 search(person, 4);
                 clear();
             } else if (opt == 8) {
-                System.out.println("请输入要删除的姓名：");
-                Scanner f = new Scanner(System.in);
-                String fname = f.nextLine();
-                String info = searchName(person, fname);
-                for (int i = 0; i < info.length(); i++) {
-                    char ind = info.charAt(i);
-                    int p = Character.getNumericValue(ind);
-                    System.out.println(person[p]);
-                    person[p] = person[person.length - 1];
+                while (true) {
+                    System.out.println("请输入要删除的姓名：");
+                    Scanner f = new Scanner(System.in);
+                    String fname = f.nextLine();
+                    String info = searchName(person, fname);
+                    if (info != "") {
+                        for (int i = 0; i < info.length(); i++) {
+                            char ind = info.charAt(i);
+                            int p = Character.getNumericValue(ind);
+                            System.out.println(person[p]);
+                            person[p] = person[person.length - 1];
+                        }
+                        person = Arrays.copyOf(person, person.length - 1);
+                        System.out.println("删除成功！");
+                        break;
+                    } else {
+                        System.out.println("查无此人，请更换姓名！！！");
+                    }
+
                 }
-                person = Arrays.copyOf(person, person.length - 1);
-                System.out.println("删除成功！");
+
                 clear();
             } else if (opt == 9) {
                 System.out.println("请问您要依据什么查询员工：");
