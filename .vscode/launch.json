@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ShellSort",
+            "request": "launch",
+            "mainClass": "Algorithm.Basic.ShellSort",
+            "projectName": "VSc-Java_8dad4612"
+        },
+        {
+            "type": "java",
             "name": "SelectSort",
             "request": "launch",
             "mainClass": "Algorithm.Basic.SelectSort",
